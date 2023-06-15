@@ -31,7 +31,25 @@ alias gcb="git checkout -b"
 alias masta="git checkout master"
 alias vim="nvim"
 
+# Timerstuff
+## Requires this timer go binary
+## https://github.com/caarlos0/timer
+declare -A pomo_options
+pomo_options["work"]="45"
+pomo_options["break"]="10"
 
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  timer ${pomo_options["$val"]}m
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
+
+# Powerline
 powerline-daemon -q
 . /usr/share/powerline/bindings/zsh/powerline.zsh
 
