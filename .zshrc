@@ -31,6 +31,8 @@ alias pw="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
 alias gcb="git checkout -b"
 alias masta="git checkout master"
 alias vim="nvim"
+alias ovim="/bin/vim"
+alias k="kubectl"
 
 # Timerstuff
 ## Requires this timer go binary
