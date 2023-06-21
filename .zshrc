@@ -15,6 +15,7 @@ plugins=(git
     fancy-ctrl-z
     zsh-autosuggestions
     zsh-syntax-highlighting
+    kubectl-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
