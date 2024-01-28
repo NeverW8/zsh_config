@@ -25,6 +25,13 @@ source $ZSH/oh-my-zsh.sh
    export EDITOR='vim'
  fi
 
+# FZF - the greatest thing since sliced bread
+qw_function() {
+  cd "$(find * -type d | fzf)"
+}
+
+alias qw=qw_function
+
 
 # Aliases
 alias pw="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
