@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Pathing
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH
@@ -5,6 +12,8 @@ export PATH
 export PATH=$PATH:/usr/local/go/bin
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ghost/.oh-my-zsh"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # The following line to enable command auto-correction.
  ENABLE_CORRECTION="true"
@@ -16,6 +25,7 @@ plugins=(git
     zsh-autosuggestions
     zsh-syntax-highlighting
     kubectl-autocomplete
+    zsh-fzf-history-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -59,7 +69,10 @@ pomodoro () {
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 
+alias bat="batcat"
 # Powerline
 powerline-daemon -q
 . /usr/share/powerline/bindings/zsh/powerline.zsh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
