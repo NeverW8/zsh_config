@@ -7,7 +7,16 @@ I'm using [OhMyZsh](https://ohmyz.sh/)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+Download this:
+> https://github.com/romkatv/powerlevel10k
+
+`git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+
+
 ## Enabling Plugins (zsh-autosuggestions & zsh-syntax-highlighting)
+- Download zsh-fzf-history-search
+`git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search`
+
  - Download zsh-autosuggestions by
 
  `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
